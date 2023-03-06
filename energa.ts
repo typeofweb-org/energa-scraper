@@ -3,6 +3,9 @@ const PASSWORD = process.env.ENERGA_PASSWORD;
 const FROM = 2022;
 const METER_ID = `30466474`;
 
+if (!LOGIN) throw new Error(`Missing ENERGA_LOGIN!`);
+if (!PASSWORD) throw new Error(`Missing ENERGA_PASSWORD!`);
+
 import Bluebird from "bluebird";
 import puppeteer from "puppeteer";
 
@@ -13,7 +16,7 @@ export async function getData() {
     defaultViewport: { width: 1512, height: 944 },
     userDataDir: "",
 
-    args: [`--window-size=1512,944`],
+    args: [`--window-size=1512,944`, `--no-sandbox`],
   });
 
   const page = await browser.newPage();

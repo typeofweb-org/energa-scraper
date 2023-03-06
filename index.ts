@@ -17,8 +17,10 @@ const server = http.createServer(async (req, res) => {
 
     const data = cache.get("data");
     res.statusCode = 200;
+    console.log(data);
     res.end(JSON.stringify(data));
   } catch (err) {
+    console.error(err);
     res.statusCode = 500;
     res.end(JSON.stringify(err));
   }
