@@ -1,12 +1,13 @@
 {
-  "name": "energa-operator",
+  "name": "orlen-energa-pgnig-scraper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "tsm index.ts",
-    "dev": "tsm index.ts"
+    "dev": "tsm index.ts",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "Michał Miszczyszyn <michal@mmiszy.pl> (https://typeofweb.com/)",
@@ -18,6 +19,9 @@
     "puppeteer": "19.7.2",
     "ts-node": "10.9.1",
     "tsm": "2.3.0",
-    "typescript": "4.9.5"
+    "typescript": "5.0.1-rc"
+  },
+  "devDependencies": {
+    "vitest": "0.29.2"
   }
 }

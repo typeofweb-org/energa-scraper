@@ -1,13 +1,16 @@
-const LOGIN = process.env.ENERGA_LOGIN;
-const PASSWORD = process.env.ENERGA_PASSWORD;
+const _LOGIN = process.env.ENERGA_LOGIN;
+const _PASSWORD = process.env.ENERGA_PASSWORD;
 const FROM = 2022;
 const METER_ID = `30466474`;
 
-if (!LOGIN) throw new Error(`Missing ENERGA_LOGIN!`);
-if (!PASSWORD) throw new Error(`Missing ENERGA_PASSWORD!`);
+if (!_LOGIN) throw new Error(`Missing ENERGA_LOGIN!`);
+const LOGIN = _LOGIN;
+if (!_PASSWORD) throw new Error(`Missing ENERGA_PASSWORD!`);
+const PASSWORD = _PASSWORD;
 
 import Bluebird from "bluebird";
 import puppeteer from "puppeteer";
+import { ChartData } from "./utils.js";
 
 export async function getData() {
   const browser = await puppeteer.launch({
@@ -165,7 +168,10 @@ async function readEnergyHistoryJson(page: puppeteer.Page, meterPoint: number) {
   energyConsumed.sort(([a], [b]) => a - b);
   energyDonated.sort(([a], [b]) => a - b);
 
-  return { energyConsumed, energyDonated };
+  return {
+    energyConsumed: energyConsumed as ChartData,
+    energyDonated: energyDonated as ChartData,
+  };
 }
 
 function chartResponseToDatapoint(response: ChartResponse) {
