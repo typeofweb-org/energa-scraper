@@ -1,7 +1,6 @@
 import { getData as getEnergaData } from "./energa.js";
 import { getData as getPgnigData } from "./pgnig.js";
 import http from "node:http";
-import NodeCache from "node-cache";
 
 type EnergaData = Awaited<ReturnType<typeof getEnergaData>>;
 type PgnigData = Awaited<ReturnType<typeof getPgnigData>>;
