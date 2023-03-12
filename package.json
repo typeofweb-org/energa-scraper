@@ -15,7 +15,6 @@
   "dependencies": {
     "@types/bluebird": "3.5.38",
     "bluebird": "3.7.2",
-    "node-cache": "5.1.2",
     "puppeteer": "19.7.2",
     "ts-node": "10.9.1",
     "tsm": "2.3.0",

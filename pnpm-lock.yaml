@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@types/bluebird': 3.5.38
   bluebird: 3.7.2
-  node-cache: 5.1.2
   puppeteer: 19.7.2
   ts-node: 10.9.1
   tsm: 2.3.0
@@ -13,7 +12,6 @@ specifiers:
 dependencies:
   '@types/bluebird': registry.npmjs.org/@types/bluebird/3.5.38
   bluebird: registry.npmjs.org/bluebird/3.7.2
-  node-cache: registry.npmjs.org/node-cache/5.1.2
   puppeteer: registry.npmjs.org/puppeteer/19.7.2_typescript@5.0.1-rc
   ts-node: registry.npmjs.org/ts-node/10.9.1_7wbcw6nybfliniwirwy4pb6kau
   tsm: registry.npmjs.org/tsm/2.3.0
@@ -649,13 +647,6 @@ packages:
       slice-ansi: registry.npmjs.org/slice-ansi/5.0.0
       string-width: registry.npmjs.org/string-width/5.1.2
     dev: true
-
-  registry.npmjs.org/clone/2.1.2:
-    resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/clone/-/clone-2.1.2.tgz}
-    name: clone
-    version: 2.1.2
-    engines: {node: '>=0.8'}
-    dev: false
 
   registry.npmjs.org/color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz}
@@ -1323,15 +1314,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
-
-  registry.npmjs.org/node-cache/5.1.2:
-    resolution: {integrity: sha512-t1QzWwnk4sjLWaQAS8CHgOJ+RAfmHpxFWmc36IWTiWHQfs0w5JDMBS1b1ZxQteo0vVVuWJvIUKHDkkeK7vIGCg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/node-cache/-/node-cache-5.1.2.tgz}
-    name: node-cache
-    version: 5.1.2
-    engines: {node: '>= 8.0.0'}
-    dependencies:
-      clone: registry.npmjs.org/clone/2.1.2
-    dev: false
 
   registry.npmjs.org/node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz}
