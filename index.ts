@@ -20,17 +20,17 @@ const server = http.createServer(async (req, res) => {
 
   const now = Date.now();
   try {
-    // if (!cache.energaData || cache.energaData.timestamp + cacheTimeMs < now) {
-    //   try {
-    //     const data = await getEnergaData();
-    //     cache.energaData = {
-    //       data,
-    //       timestamp: now,
-    //     };
-    //   } catch (err) {
-    //     console.error(`Error on getEnergaData`, err);
-    //   }
-    // }
+    if (!cache.energaData || cache.energaData.timestamp + cacheTimeMs < now) {
+      try {
+        const data = await getEnergaData();
+        cache.energaData = {
+          data,
+          timestamp: now,
+        };
+      } catch (err) {
+        console.error(`Error on getEnergaData`, err);
+      }
+    }
     if (!cache.pgnigData || cache.pgnigData.timestamp + cacheTimeMs < now) {
       try {
         const data = await getPgnigData();
