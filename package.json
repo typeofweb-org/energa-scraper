@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "start": "tsm index.ts",
     "dev": "tsm index.ts",
     "test": "vitest"
@@ -15,7 +16,7 @@
   "dependencies": {
     "@types/bluebird": "3.5.38",
     "bluebird": "3.7.2",
-    "puppeteer": "19.7.2",
+    "puppeteer": "19.7.5",
     "ts-node": "10.9.1",
     "tsm": "2.3.0",
     "typescript": "5.0.1-rc"
