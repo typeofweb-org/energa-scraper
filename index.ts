@@ -1,6 +1,7 @@
 import { getData as getEnergaData } from "./energa.js";
 import { getData as getPgnigData } from "./pgnig.js";
 import http from "node:http";
+import pkg from "./package.json";
 
 type EnergaData = Awaited<ReturnType<typeof getEnergaData>>;
 type PgnigData = Awaited<ReturnType<typeof getPgnigData>>;
@@ -43,8 +44,8 @@ const server = http.createServer(async (req, res) => {
     }
 
     const data = {
-      ...cache.energaData,
-      ...cache.pgnigData,
+      ...cache.energaData?.data,
+      ...cache.pgnigData?.data,
     };
 
     res.statusCode = 200;
@@ -57,6 +58,7 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+console.log(`Starting ${pkg.name}`);
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
