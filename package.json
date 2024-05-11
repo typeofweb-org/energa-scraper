@@ -6,22 +6,22 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "tsm index.ts",
-    "dev": "tsm index.ts",
+    "start": "tsx index.ts",
+    "dev": "tsx index.ts",
     "test": "vitest"
   },
   "keywords": [],
   "author": "Michał Miszczyszyn <michal@mmiszy.pl> (https://typeofweb.com/)",
   "license": "ISC",
   "dependencies": {
-    "@types/bluebird": "3.5.38",
+    "@types/bluebird": "3.5.42",
     "bluebird": "3.7.2",
-    "puppeteer": "19.7.5",
-    "ts-node": "10.9.1",
-    "tsm": "2.3.0",
-    "typescript": "5.0.1-rc"
+    "puppeteer": "22.8.0",
+    "tsx": "4.10.0",
+    "typescript": "5.4.5"
   },
   "devDependencies": {
-    "vitest": "0.29.2"
-  }
+    "vitest": "1.6.0"
+  },
+  "packageManager": "pnpm@9.1.0+sha256.22e36fba7f4880ecf749a5ca128b8435da085ecd49575e7fb9e64d6bf4fad394"
 }

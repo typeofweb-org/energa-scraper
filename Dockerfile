@@ -1,15 +1,15 @@
-FROM node:18-alpine
+FROM node:22-alpine
 ARG TARGETPLATFORM
 ENV TARGETPLATFORM=${TARGETPLATFORM:-linux/amd64}
 ARG TARGETARCH
 ENV TARGETARCH=${TARGETARCH:-amd64}
 
 ENV NODE_ENV production
-ENV PUPPETEER_SKIP_DOWNLOAD true
+ENV PUPPETEER_SKIP_DOWNLOAD false
 
 WORKDIR /usr/src/app
 
-RUN npm install -g pnpm@7
+RUN corepack enable
 RUN apk add chromium
 
 COPY package.json ./

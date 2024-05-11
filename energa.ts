@@ -51,9 +51,8 @@ export async function getData() {
 
   await login(page);
   const meterPoint = await selectMeter();
-  const { consumedEnergyTotal, donatedEnergyTotal } = await readEnergyTotal(
-    page
-  );
+  const { consumedEnergyTotal, donatedEnergyTotal } =
+    await readEnergyTotal(page);
   const { energyConsumed, energyDonated } = await readEnergyHistoryJson(
     page,
     Number.parseInt(meterPoint)
@@ -79,20 +78,27 @@ export async function getData() {
 async function login(page: puppeteer.Page) {
   await page.goto("https://mojlicznik.energa-operator.pl/dp/UserLogin.do");
 
-  await page.evaluate(() =>
-    document.querySelector<HTMLLabelElement>('label[for="loginRadio"]')?.click()
+  await page.evaluate(
+    () =>
+      document
+        .querySelector<HTMLLabelElement>('label[for="loginRadio"]')
+        ?.click()
   );
 
   await page.type("#j_username", LOGIN);
   await page.type("#j_password", PASSWORD);
-  await page.evaluate(() =>
-    document.querySelector<HTMLLabelElement>('label[for="rememberMe"]')?.click()
+  await page.evaluate(
+    () =>
+      document
+        .querySelector<HTMLLabelElement>('label[for="rememberMe"]')
+        ?.click()
   );
   await Promise.all([
-    page.evaluate(() =>
-      document
-        .querySelector<HTMLLabelElement>('button[name="loginNow"]')
-        ?.click()
+    page.evaluate(
+      () =>
+        document
+          .querySelector<HTMLLabelElement>('button[name="loginNow"]')
+          ?.click()
     ),
     page.waitForNavigation(),
   ]);
